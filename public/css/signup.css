@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dbdbdb;
+}
+
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    display: none;
+}
+
+.logo{
+    height: 200px;
+    display: block;
+    margin: 0 auto 50px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    display: block;
+    width: 300px;
+    height: 40px;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background: #fff;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    color: #383838;
+    font-size: 16px;
+    box-shadow: 04px 10px rgba(0,0,0,0.04);
+}
+
+::placeholder{
+    color: #383838;
+}
+
+.submitButton{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #383838;
+    color: #fff;
+    border-radius: 2px;
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 30px 0;
+    font-size: larger;
+}
