@@ -1,0 +1,17 @@
+.searchResults{
+    width: 100%;
+    padding: 40px 0;
+}
+
+.searchHeading{
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-bottom: -80vw;
+    padding: 0 10vw;
+
+}
+
+.searchHeading span{
+    font-weight: 700;
+}

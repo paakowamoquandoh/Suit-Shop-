@@ -1,0 +1,15 @@
+.four0fourImg{
+    display: block;
+    margin: 60px auto;
+}
+
+.four0fourText{
+    text-align: center;
+    text-transform: capitalize;
+    color: #383838;
+    font-size: larger;
+}
+
+.four0fourText a{
+    color: blue;
+}

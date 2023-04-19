@@ -1,0 +1,113 @@
+.productInfo{
+    width: 100%;
+    padding: 60px 10vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imageSlider{
+    width: 40%;
+    height: 500px;
+    position: relative;
+    background-image: url("../img/homeCart/image2.png");
+    background-size: cover;
+    object-fit: cover;
+}
+
+.productImages{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    background: #fff;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.productImages img{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.productImages img.active{
+    opacity: 0.5;
+}
+
+.itemDetails{
+    width: 50%;
+}
+
+.itemDetails .productBrand{
+    text-transform: capitalize;
+    font-size: 30px;
+}
+
+.itemDetails .itemDescription{
+    font-size: 22px;
+    line-height: 30px;
+    height: auto;
+    margin: 15px 0 30px ;
+}
+
+.itemPrice{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.itemDiscount{
+    color: #ff7d7d;
+    font-size: 20px;
+}
+
+.subHeading{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 60px 0 10px ;
+    font-weight: 300;
+}
+
+.sizeRadioBtn{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+   border: 1px solid #383838;
+   border-radius: 50%;
+   margin: 10px;
+   margin-left: 0;
+   line-height: 80px;
+   text-transform: uppercase; 
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.sizeRadioBtn.check{
+    background: #383838;
+    color: #fff;
+}
+
+.btn{
+    width: 48%;
+    padding: 20px;
+    border-radius: 5px;
+    background: none;
+    border: 1px solid #383838;
+    color: #383838;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.cartButton{
+    margin-right: 2%;
+    background: #383838;
+    color: #fff;
+}

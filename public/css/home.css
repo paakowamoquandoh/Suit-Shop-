@@ -1,0 +1,921 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800&display=swap');
+
+@import "./nav.css";
+@import "./footer.css";
+@import "./products.css";
+@import "./singleItem.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* General Styles */
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 64px;
+    color: #222;
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+    
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;    
+}
+
+p{
+    font-size: 16px;
+    color: #464649;
+    margin: 15px 0 20px 0;
+}
+
+button.basic{
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: white;
+  background-color: teal;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+button.white{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.3s;
+  }
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+
+/* Cover section Styling */
+.cover{
+    background-image: url("../img/page-backgrounds/clem-onojeghuo-CJtNSIOicD0-unsplash.jpg") ;
+    background-color: rgb(1, 7, 5);
+    height: 66vh;
+    width: 100%;
+    background-position: top 25% right 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 150px 100px;
+    display: flex;
+    align-items: flex-start;
+    color: #AE0203;
+}
+
+.cover h4{
+    padding-bottom: 10px;
+}
+
+.cover h1{
+    color: rgb(172, 98, 0);
+    font-weight: bolder;
+}
+
+.cover h2, h5{
+    color: rgb(177, 167, 154);
+    font-weight: bolder;
+}
+
+.cover h5{
+    margin-bottom: 20px;
+}
+
+.cover button{
+    background-image: url("../img/icons/button.png");
+    background-color: #AE0203;
+    color: rgb(241, 142, 13);
+    border: none;
+    padding: 14px 60px 14px 45px;
+    border-radius: 5px;
+    font-size: 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.cover button:hover{
+    background-color: bisque;
+}
+
+.feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.feature .featureBox{
+    width: 220px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 3px double rgba(177, 167, 154, 0.616);
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.feature .featureBox:hover{    
+    box-shadow: 5px 5px 54px rgba(132, 130, 121, 0.591);    
+}
+
+.feature .featureBox img{
+   width: 100%;
+}
+
+.feature .featureBox h6{
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: teal;  
+    background-color: rgba(223, 123, 181, 0.593); 
+    margin-top: 10px; 
+    display: inline-block;
+}
+
+.feature .featureBox:nth-child(2) h6{
+    background-color: lightgreen;
+}
+
+.feature .featureBox:nth-child(3) h6{
+    background-color: lightskyblue;
+}
+
+.feature .featureBox:nth-child(4) h6{
+    background-color: lightsalmon;
+}
+
+.feature .featureBox:nth-child(5) h6{
+    background-color: lightsteelblue;
+}
+
+.feature .featureBox:nth-child(6) h6{
+    background-color: lightpink;
+}
+
+
+/* Products section styles */
+.productsArea{
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.productsArea .categoryTitle{
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+
+.productsArea .products{
+    padding: 0 5vw;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.productsArea::-webkit-scrollbar{
+    display: none;
+}
+
+.productsArea .products .product{
+    flex: 0 0 auto;
+    position: relative;
+    width: 15%;
+    min-width: 200px;
+    padding: 10px 12px;
+    border: 1px solid rgba(177, 167, 154, 0.616);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow:
+  3.1px 2.6px 3.6px rgba(0, 0, 0, 0.028),
+  8.6px 7.3px 10px rgba(0, 0, 0, 0.04),
+  20.8px 17.5px 24.1px rgba(0, 0, 0, 0.052),
+  69px 58px 80px rgba(0, 0, 0, 0.08);
+    margin-right: 30px;
+    transition: 0.3s ease;
+}
+
+.productsArea .products .product:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.09);
+}
+
+.productsArea .products .product .productImage{
+    position: relative;
+    width: 100%;
+    height: 14rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.productsArea .products .product .productImage .discount{
+   position: absolute;
+   background: #fff;
+   padding: 5px;
+   border-radius: 5px;
+   color: #ff7d7d;
+   right: 10px;
+   top: 10px;
+   text-transform: capitalize;
+}
+
+.productsArea .products .product .productImage img{
+    transition: all 1s;
+    height: 13rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.productsArea .products .product .productImage img:hover {
+    transform: scale(1.1);
+  }
+
+.productsArea .products .product .description{
+    text-align: start;
+    padding: 10px 0;
+}
+
+.productsArea .products .product .description span{
+   color: #464649;
+   font-size: 12px;
+}
+
+.productsArea .products .product .description h5{
+    padding-top: 7px;
+    color: #080d09;
+    font-size: 18px;
+ }
+
+ .stars ion-icon{
+    color: gold;
+    font-size: 20px;
+ }
+
+ .productsArea .products .product .description h4{
+    padding-top: 7px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(172, 98, 0);
+ }
+
+ .productsArea .products .product .proCart{
+    width: 45px;
+    height: 40px;
+    background-color: rgb(218, 239, 232);
+    line-height: 40px;
+    border-radius: 50px;
+    font-weight: 400;
+    color: teal;
+    text-align: center; 
+    position: absolute;
+    bottom: 18px;
+    right: 18px;   
+ }
+
+ .productsArea .products .product .quantity{
+    width: 45px;
+    height: 40px;
+    font-size: 1.4rem;
+    line-height: 40px;
+    color: #000;
+    font-weight: bold;
+    text-align: center; 
+    position: absolute;
+    bottom: 18px;
+    right: 48px;   
+ }
+
+ .productsArea .products .product .takeOut{
+    width: 45px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(239, 218, 218);
+    border-radius: 50px;
+    font-weight: 400;
+    color: rgb(128, 0, 0);
+    text-align: center; 
+    position: absolute;
+    bottom: 18px;
+    right: 88px;   
+ }
+
+ .productsArea .products .product .proCart:hover{
+      background-color: rgba(0, 128, 128, 0.88);
+      color: white;
+ }
+
+ .products .product .takeOut:hover{
+    background-color: white;
+ }
+
+ .previousBtn, .nextBtn{
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(255,255,255,0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+ }
+
+ .nextBtn{right: 0;}
+
+ .previousBtn{
+    left: 0;
+    transform: rotate(180deg);
+ }
+
+ .previousBtn ion-icon, .nextBtn ion-icon{
+    margin-top: 20px;
+    font-size: 36px;
+    opacity: 0.2;
+ }
+
+ .previousBtn ion-icon:hover, .nextBtn ion-icon:hover{
+    opacity: 1;
+ }
+
+ /* Banner styles */
+ .banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("../img/page-backgrounds/banner3.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    margin: 30px 0;
+ }
+
+ .banner h4{
+    color: white;
+    font-size: 2rem;
+ }
+
+ .banner h2{
+    color: white;
+    font-size: 3.2rem;
+    padding: 10px 0;
+ }
+
+ .banner h2 span{
+    color: #f60a0a;
+ }
+
+ .banner button:hover{
+    background-color: teal;
+    color: whitesmoke;
+ }
+
+ .proBanner{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+ }
+
+ .proBanner .promoBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    min-width: 650px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    margin: 60px 0;
+    padding: 30px;
+ }
+
+ .promo{
+    background-image: url("../img/page-backgrounds/banner1.jpg");
+ }
+
+ .promo1{
+    background-image: url("../img/page-backgrounds/bannerTry.jpg"); 
+ }
+
+ .proBanner h4{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+ }
+
+ .proBanner h2{
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+ }
+
+
+ .proBanner .promoBox:hover button{
+    background: teal;
+    border: 1px solid teal;
+ }
+
+
+ .productBanners{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: -100px;
+ }
+
+ .productBanners .bannerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 50px;    
+    padding: 20px;
+ }
+
+ .productBanner1{
+    background-image: url("../img/page-backgrounds/alt.jpg"); 
+ }
+ .productBanner2{
+    background-image: url("../img/page-backgrounds/banner.jpg"); 
+ }
+ .productBanner3{
+    background-image: url("../img/page-backgrounds/banner5.jpg"); 
+ }
+
+ .productBanners h2{
+    color: #fff;
+    font-weight: 900;
+    font-size: 2.8rem;
+ }
+
+ 
+ .productBanners h3{
+    color: #ff3f3f;
+    font-weight: 800;
+    font-size: 1.8rem;
+ }
+
+ .newsletter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: black;
+ }
+
+ .newsletter .signUpFrom{
+    display: flex;
+    width: 40%;
+ }
+
+ .newsletter h4{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+ }
+
+ .newsletter p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(172, 98, 0);
+ }
+
+ .newsletter p span{
+    color: rgba(128, 128, 128, 0.747);
+ }
+
+ .newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    
+ }
+
+ .newsletter button{
+    background-color: teal;
+    color: white;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: -2px;
+
+    
+ }
+
+ .newsletter button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries for standar devices */
+/* Tablet view */
+@media (max-width: 830px){
+    body{
+        min-width: 100vw;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    .section-p1{
+        padding: 60px 30px;
+    }
+
+    
+    .navItems{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: rgb(147, 147, 147);
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 16px;
+        transition: 0.3s;
+    }
+
+    .navItems.active{
+        right: 0px;
+    }
+
+    .navItems.hide{
+        right: -300px;
+    }    
+
+    .navBrandImage{
+        margin-left: -80px;
+        height: 9.6rem;
+       
+    }
+
+    .mobileCart{
+        position: relative;
+    }
+
+    .navItems li{
+        margin-bottom: 25px;
+    }
+
+    .mobileNav{
+        display: flex;
+        align-items: center;
+        margin-right: -45px;
+    }
+
+    .mobileNav ion-icon{
+        color: black;
+        margin-left: 10px;
+    }
+
+    .mobileMenuClose{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        margin-top: -12px;
+    }
+
+    .cover{
+        height: 70vh;        
+        background-image: none; 
+        position: relative; 
+        min-width: 100vw; 
+        margin: auto 0;         
+    }
+      
+      .cover:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-image: url('../img/page-backgrounds/clem-onojeghuo-CJtNSIOicD0-unsplash.jpg');
+        background-repeat: no-repeat;
+        background-position: top 40% right 30%;
+        background-size: cover;
+      }
+
+    .coverContent{
+        margin-top: 50px;  
+        position: relative; 
+        padding: 0;     
+    }
+
+    .coverContent h3{
+        color: #f50303;
+        font-weight: bold;
+    }
+
+    .coverContent h2{
+        font-size: 2.1rem;
+        color: rgb(228, 221, 212);
+    }
+    .coverContent h5{
+        color: rgb(228, 221, 212);
+        font-size: 1.2rem;
+    }
+    .cover button{
+        padding: 10px 50px 10px 35px;        
+    }
+
+    .feature{
+        justify-content: center;
+    }
+ 
+    .feature .featureBox{
+        margin: 15px 15px;         
+    }
+
+    .products .productsBox {
+        justify-content: center;       
+    }
+
+    .products .product {
+        margin: 20px;
+    }
+
+    .products .product img {
+        height: 18rem;        
+    }
+
+    .products .product .description h5 {
+        margin: 5px;
+        color: rgb(75, 73, 73);
+        line-height: 25px;
+    }
+
+    .products .product .description span {
+        background-color: grey;
+        padding: 8px 8px;
+        font-weight: bold;
+        color: white;
+        font-size: 18px;
+        margin: 0px 5px;
+    }
+
+    .banner {
+        height: 22vh;        
+    }
+
+    .banner h4{
+        font-size: 1.5rem;
+     }
+    
+     .banner h2{
+        font-size: 2.6rem;        
+     }
+
+    footer{
+        padding: 0;
+    }
+
+    .proBanner .promoBox {
+        min-width: 100%;
+        height: 30vh;
+        margin-top: -20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .productBanners {
+        padding: 0 30px;
+    }
+
+    .productBanners .bannerBox {
+    width: 28%;    
+    }
+
+    .newsletter .signUpFrom {
+        width: 70%;
+    }
+
+    footer .footCol {
+      margin-bottom: 20px;
+    }
+
+   .installBrandImage{
+    height: 5.5rem;
+    margin: -20px;
+}
+
+footer .socialSection ion-icon{
+    color: #202020;
+    display: inline-block;
+       
+    font-size: 24px;
+}
+
+}
+
+
+@media (max-device-width: 480px){
+   .header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: -20px;
+   }
+
+   .navBrandImage {
+    margin-left: -80px;
+}
+
+.mobileCart{
+    position: relative;
+}
+
+.secondHeader{
+    padding: 0;
+}
+
+.searchBox{
+    width: 85vw;
+}
+
+.searchBtn{
+    width: 30%;
+}
+
+   h2{
+    font-size: 32px;
+    line-height: 55px;
+   }
+
+   h1{
+    font-size: 30px;
+    line-height: 55px;
+   }
+
+   .cover{
+    padding: 0 20px;
+    background-position: 55%;
+   }
+
+   .cover h4{
+    padding-bottom: 0px;
+}
+
+.feature{
+    justify-content: space-between;
+}
+
+.feature .featureBox{
+    margin: 0 0 15px 0;  
+    width: 155px;       
+  }
+
+  .products .product {
+    width: 100%;
+  } 
+
+  .banner {
+    height: 40vh;        
+   }
+
+   .banner h4{
+    font-size: 1.4rem;
+    background-color: #1a1a1a;
+    padding: 8px 12px;
+ }
+
+ .banner h2{
+    font-size: 2rem;        
+   }
+
+   .proBanner .promoBox {
+    height: 40vh;    
+}  
+   
+  .productBanners{
+    padding: 0 20px;
+  }
+
+  .productBanners .bannerBox {
+    width: 100%;
+}
+
+.newsletter{
+    padding: 40px 20px;
+}
+
+  .newsletter .signUpFrom{
+    width: 100%;
+  }
+
+  /*  */
+  .shopCover h2,
+  .appointCover h2,
+  .aboutCover h2,
+  .ordersCover h2{
+    margin-bottom: -10px;
+    font-size: 1.5rem;
+    
+}
+
+.shopCover h5,
+  .appointCover h5,
+  .aboutCover h5,
+  .ordersCover h5{
+    color: rgb(24, 24, 24);
+    font-size: 0.8rem;
+}
+
+.shopCoverContent,
+  .appointCoverContent,
+  .aboutCoverContent,
+  .ordersCoverContent{   
+    padding: 10px;     
+}
+
+.productDetails{
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+}
+
+.productDetails .singleProductImgs{
+   width: 100%;
+   margin-right: 0px;
+   
+}
+
+#mainProduct{
+    height: 400px;
+}
+
+.productDetails .productDesc{
+    width: 100%;
+}
+
+}
