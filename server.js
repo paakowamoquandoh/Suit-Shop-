@@ -26,18 +26,18 @@ app.get("/signup", (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    let {nameValue, emailValue, passwordValue, numberValue, termsAndConditions, notification} = req.body
+    let {name, email, password, number, termsAndConditions, notification} = req.body
 
     //validation
-    if (nameValue.length < 3) {
+    if (name.length < 3) {
         return res.json({"alert": "name must be 3 letters or more"});
-    }else if(!emailValue.length){
+    }else if(!email.length){
         return res.json({"alert": "enter your email"});
-    }else if(!passwordValue.length){
+    }else if(!password.length){
         return res.json({"alert": "password should be 8 letters long"});
-    }else if(!numberValue.length){
+    }else if(!number.length){
         return res.json({"alert": "enter  phone number"});
-    }else if (!Number(numberValue) || numberValue.length < 10) {
+    }else if (!Number(number) || number.length < 10) {
         return res.json({"alert": "invalid number, please enter valid number"});
     }else if(!termsAndConditions.checked){
         return res.json({"alert": "you must agree to our terms and conditions"});
