@@ -4,6 +4,16 @@ const admin = require("firebase-admin");
 const bcrypt = require("bcrypt");
 const path = require("path");
 
+//firebase
+let serviceAccount = require("./suit-shopper-firebase-adminsdk-ky59r-eea8ac3b18.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+let dB = admin.firestore();
+
+
 //declare static path
 let staticPath = path.join(__dirname, "public");
 
@@ -27,7 +37,7 @@ app.get("/signup", (req, res) => {
 
 app.post("/signup", (req, res) => {
     let {name, email, password, number, termsAndConditions, notification} = req.body
-
+    console.log(req.body)
     //validation
     if (name.length < 3) {
         return res.json({"alert": "name must be 3 letters or more"});
@@ -39,13 +49,31 @@ app.post("/signup", (req, res) => {
         return res.json({"alert": "enter  phone number"});
     }else if (!Number(number) || number.length < 10) {
         return res.json({"alert": "invalid number, please enter valid number"});
-    }else if(!termsAndConditions.checked){
+    }else if(!termsAndConditions){
         return res.json({"alert": "you must agree to our terms and conditions"});
-    }else{
-        //store user in database
     }
-
-    res.json("data recieved");
+        //store user in database
+        dB.collection("users").doc(email).get()
+        .then(user => {
+            if(user.exists){
+                return res.join({"alert": "email already exists"});
+            } else {
+                //encrypt and store password
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(password, salt, (err, hash) =>{
+                        req.body.password = hash;
+                        dB.collection("users").doc(email).set(req.body)
+                        .then(data => {
+                            res.json({
+                                name: req.body.name,
+                                email: req.body.email,
+                                seller: req.body.seller
+                            })
+                        })
+                    })
+                })
+            }
+        }) 
 })
 
 //404
@@ -59,4 +87,5 @@ app.use((req,res) => {
 
 app.listen(3000, () => {
     console.log("listening on port 3000......")
+    
 })
