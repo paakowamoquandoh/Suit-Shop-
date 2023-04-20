@@ -18,4 +18,11 @@ const compareToken = (token, key ) => {
         let index2 = char.indexOf(token[i+1]);
         string += char[index1 + index2];        
     }
+    console.log(string);
+    if (string === key) {
+        return true;       
+    }
+    return false;
 }
+
+
