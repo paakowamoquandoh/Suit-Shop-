@@ -125,7 +125,7 @@ label a{
 
 .alertArea{
     width: 300px;
-    min-height: 220px;
+    min-height: 150px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 100px rgba(0,0,0,0.04);
@@ -139,10 +139,10 @@ label a{
     transition: 1s;
 }
 
-.alertArea.show{
+.show{
     opacity: 1;
     pointer-events: all;
-    top: 50%;
+    top: 52%;
 }
 
 .errorIcon{
