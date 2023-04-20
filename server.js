@@ -56,7 +56,7 @@ app.post("/signup", (req, res) => {
         dB.collection("users").doc(email).get()
         .then(user => {
             if(user.exists){
-                return res.join({"alert": "email already exists"});
+                return res.json({"alert": "email already exists"});
             } else {
                 //encrypt and store password
                 bcrypt.genSalt(10, (err, salt) => {
@@ -74,6 +74,11 @@ app.post("/signup", (req, res) => {
                 })
             }
         }) 
+})
+
+//login route
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(staticPath, "login.html"));
 })
 
 //404
