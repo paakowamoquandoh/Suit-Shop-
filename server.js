@@ -108,6 +108,27 @@ app.post("/login", (req,res) => {
      })
 })
 
+//admin
+app.get("/admin", (req, res) => {
+    res.sendFile(path.join(staticPath, "admin.html"));
+})
+
+app.post("/admin", (req,res) => {
+    let {name, about, address, number, tAndC, validInfo, email} = req.body;
+    if (!name.length || !address.length || !about.length || number.length < 10 || !Number(number)) {
+        return res.json({"alert": "some information(s) is/are invalid"})        
+    } else if (!tAndC || !validInfo) {
+        return res.json({"alert": "you must agree to our terms and conditions"});       
+    }else{
+        //update users seller status
+        dB.collection("users").doc(email).update({
+            admin: true
+        }).then(data => {
+            res.json(true);
+        })
+    }
+})
+
 //404
 app.get("/404", (req, res) => {
     res.sendFile(path.join(staticPath, "404.html"));
@@ -117,7 +138,7 @@ app.use((req,res) => {
    res.redirect("/404");
 })
 
-app.listen(3000, () => {
-    console.log("listening on port 3000......")
+app.listen(3030, () => {
+    console.log("listening on port 3030......")
     
 })
