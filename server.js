@@ -12,6 +12,43 @@ admin.initializeApp({
 
 let dB = admin.firestore();
 
+//aws config
+const aws = require("aws-sdk");
+const dotnev = require("dotenv");
+
+dotnev.config();
+
+//aws paramenters
+const region = "ap-southeast-1";
+const bucketName = "suit-shop1st";
+const accessKeyId = process.env.AWS_ACCESS_KEY;
+const secretAccessKey = process.env.AWS_SECRET_KEY;
+
+aws.config.update({
+  region,accessKeyId,secretAccessKey
+})
+
+const s3 = new aws.S3()
+
+async function generateUrl() {
+  let date = new Date();
+  let id = parseInt(Math.random() * 10000000000);
+
+  const imageName =  `${id}${date.getTime()}.jpg`;
+
+  const params = ({
+    Bucket: bucketName,
+    Key: imageName,
+    Expires: 300,
+    ContentType: "image/jpeg"
+  })
+
+  const uploadUrl = await s3.getSignedUrlPromise("putObject", params);
+  return uploadUrl;
+}
+
+
+
 //declare static path
 let staticPath = path.join(__dirname, "public");
 
@@ -114,6 +151,38 @@ app.post("/login", (req, res) => {
 });
 
 //admin
+app.get("/admin", (req,res) => {
+  res.sendFile(path.join(staticPath, "admin.html"));
+})
+
+app.post("/admin", (req,res) => {
+  let {name, about, address,number, tAndC, validInfo, email} = req.body;
+  if (!name.length || !address.length || !about.length || number.lenght < 10 || !Number(number)) { 
+    return res.json({"alert": "some information(s) is/are invalid"});   
+  }else if(!tAndC || !validInfo){
+    return res.json({"alert": "agree to our terms and conditions"}); 
+  }else{
+    //update admin status
+    dB.collection("admin").doc(email).set(req.body)
+    .then(data => {
+      dB.collection("users").doc(email).update({
+        admin: true
+      }).then(data => {
+          res.json(true);
+      })
+    })
+  }
+})
+
+//add product
+app.get("/addProduct", (req,res) => {
+  res.sendFile(path.join(staticPath, "addProduct.html"));
+})
+
+//get upload link
+app.get("/s3url", (req,res) => {
+  generateUrl().then(url => res.json(url));
+})
 
 //404
 app.get("/404", (req, res) => {
@@ -124,6 +193,6 @@ app.use((req, res) => {
   res.redirect("/404");
 });
 
-app.listen(2030, () => {
-  console.log("listening on port 2030......");
+app.listen(3030, () => {
+  console.log("listening on port 3030......");
 });

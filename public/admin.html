@@ -38,12 +38,12 @@
    <!--  -->
    <div class="applicationForm">
     <input type="text" name="" id="businessName" placeholder="business name / company name / shop name">
-    <textarea id="" cols="30" rows="10" name="" id="addBusiness" placeholder="address"></textarea>
-    <textarea id="" cols="30" rows="10" name="" id="about" placeholder="about"></textarea>
-    <input type="text" name="" id="number" placeholder="number">
+    <textarea cols="30" rows="10" id="addBusiness" placeholder="address"></textarea>
+    <textarea cols="30" rows="10" id="about" placeholder="about"></textarea>
+    <input type="text" id="number" placeholder="number">
     <input type="checkbox" checked class="checkBox" id="termsAndConditions">
     <label for="termsAndConditions">agree to our <a href="">terms and conditions</a></label><br>
-    <input type="checkbox" checked class="checkBox" name="" id="validInfo">
+    <input type="checkbox" checked class="checkBox" id="validInfo">
     <label for="validInfo">all info is valid</label>
     <button class="submitButton" id="applicationFormBtn">apply</button>
    </div>
@@ -51,7 +51,7 @@
 
 
    <!--  -->
-   <div class="productListing hide">
+   <div id="productListing" class="productListing hide">
     <div class="addProduct">
         <p class="productTitle">add product</p>
         <button class="btn">add product</button>

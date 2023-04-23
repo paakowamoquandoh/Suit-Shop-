@@ -1,7 +1,7 @@
 let loader = document.querySelector(".loader");
 
 const sellerApplicant = document.querySelector(".sellerUser");
-const productList = document.querySelector(".productListing");
+const productList = document.querySelector("#productListing");
 const applicationForm = document.querySelector(".applicationForm");
 const showApplication = document.querySelector("#applyBtn");
 
@@ -14,6 +14,7 @@ window.onload = () => {
         applicationForm.classList.add("hide");
       } else {
         productList.classList.remove("hide");
+        applicationForm.style.display = "none"
       }
     }
   } else {
@@ -68,7 +69,7 @@ const processData = (data) => {
     // data.authToken = generateToken(data.email);
     sessionStorage.user = JSON.stringify(data);
     location.replace("/");
-  } else if (data === true) {
+  } else if (data == true) {
     //admin page
     let user = JSON.parse(sessionStorage.user);
     user.admin = true;
@@ -86,11 +87,11 @@ applyFormButton.addEventListener("click", () => {
   ) {
     showAlert("fill all the Inputs");
   } else if (!tAndC.checked || !validInfo.checked) {
-    showAlert("youst agree to our terms and conditions");
+    showAlert("you must agree to our terms and conditions");
   } else {
     //making server request
     loader.style.display = "block";
-    sendData("/seler", {
+    sendData("/admin", {
       name: businessName.value,
       address: address.value,
       about: about.value,
