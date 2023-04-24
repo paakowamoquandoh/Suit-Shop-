@@ -32,9 +32,28 @@ sellingPrice.addEventListener("input", () => {
 })
 
 //image upload
-let uploadedImages = document.querySelectorAll(".fileUpload");
+let uploadImages = document.querySelectorAll(".fileUpload");
 let imagePaths = []; // image path storage
 
 
-fetch("/s3url").then(res => res.json())
-.then(url => console.log(url));
+uploadImages.forEach((fileUpload,index) => {
+    fileUpload.addEventListener("change", () => {
+        const file = fileUpload.files[0];
+        let imageUrl;
+
+        // if(file.type.includes("image")){
+        //     fetch("/S3url").then(res => res.json())
+        //     .then(url => {
+        //         fetch(url, {
+        //             method: "PUT",
+        //             headers: new Headers({"Content-Type": "multipart/form-data"}),
+        //             body: file
+        //         }).then(res => {
+        //             imageUrl = url.split("?")[0];
+        //             imagePaths[index] = imageUrl;
+        //             console.log(imageUrl);
+        //         }) 
+        //     })
+        // }
+    })
+})
