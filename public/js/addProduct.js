@@ -36,5 +36,5 @@ let uploadedImages = document.querySelectorAll(".fileUpload");
 let imagePaths = []; // image path storage
 
 
-fetch("/S3url").then(res => res.json())
+fetch("/s3url").then(res => res.json())
 .then(url => console.log(url));

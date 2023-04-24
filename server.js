@@ -13,7 +13,7 @@ admin.initializeApp({
 let dB = admin.firestore();
 
 //aws config
-const aws = require("aws-sdk");
+const AWS = require("aws-sdk");
 const dotnev = require("dotenv");
 
 dotnev.config();
@@ -24,11 +24,11 @@ const bucketName = "suit-shop1st";
 const accessKeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
 
-aws.config.update({
+AWS.config.update({
   region,accessKeyId,secretAccessKey
 })
 
-const s3 = new aws.S3()
+const S3 = new AWS.S3()
 
 async function generateUrl() {
   let date = new Date();
@@ -43,7 +43,7 @@ async function generateUrl() {
     ContentType: "image/jpeg"
   })
 
-  const uploadUrl = await s3.getSignedUrlPromise("putObject", params);
+  const uploadUrl = await S3.getSignedUrlPromise("putObject", params);
   return uploadUrl;
 }
 
@@ -180,7 +180,7 @@ app.get("/addProduct", (req,res) => {
 })
 
 //get upload link
-app.get("/s3url", (req,res) => {
+app.get("/S3url", (req,res) => {
   generateUrl().then(url => res.json(url));
 })
 
@@ -193,6 +193,6 @@ app.use((req, res) => {
   res.redirect("/404");
 });
 
-app.listen(3030, () => {
-  console.log("listening on port 3030......");
+app.listen(4001, () => {
+  console.log("listening on port 4001......");
 });
