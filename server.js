@@ -50,7 +50,7 @@ async function generateUrl() {
 
 
 //declare static path
-let staticPath = path.join(__dirname, "public");
+let staticPath = path.join(__dirname, "./");
 
 // express init
 const app = express();
