@@ -35,22 +35,7 @@ submitForm.addEventListener("click", () => {
               showAlert("you must agree to our terms and conditions");
           }else{
               //submit form
-              pageloader.style.display = "block";
-              sendData("/signup", {
-                name: nameValue.value,
-                email: emailValue.value,
-                password: passwordValue.value,
-                number: numberValue.value,
-                termsAndConditions: termsAndConditions.checked,
-                notification: notification.checked,
-                seller: false
-              }).then(response => {
-                // Assuming response contains information about the successful signup,
-                // you can redirect to "index.html" here
-                if (response.name && response.email) {
-                  window.location.href = "/index.html";
-                }
-              });
+              window.location.href = "/admin";
           }        
     } else{
         //login
@@ -58,18 +43,7 @@ submitForm.addEventListener("click", () => {
             showAlert("fill all the inputs");          
         }else {
             pageloader.style.display = "block";
-              sendData("/login", {
-                  
-                  email: emailValue.value,
-                  password: passwordValue.value,
-                  
-                }).then(response => {
-                    // Assuming response contains information about successful login,
-                    // you can redirect to "index.html" here
-                    if (response.name && response.email) {
-                      window.location.href = "/index";
-                    }
-                  });
+            window.location.href = "/admin";
         }
     }
   });
