@@ -494,66 +494,6 @@ button.white{
     font-size: 1.8rem;
  }
 
- .newsletter{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: black;
- }
-
- .newsletter .signUpFrom{
-    display: flex;
-    width: 40%;
- }
-
- .newsletter h4{
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: white;
- }
-
- .newsletter p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: rgb(172, 98, 0);
- }
-
- .newsletter p span{
-    color: rgba(128, 128, 128, 0.747);
- }
-
- .newsletter input {
-    height: 3.125rem;
-    padding: 0 1.25rem;
-    font-size: 1rem;
-    width: 100%;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    outline: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    
- }
-
- .newsletter button{
-    background-color: teal;
-    color: white;
-    white-space: nowrap;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-top: -2px;
-
-    
- }
-
- .newsletter button:hover{
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    
- }
-
 
 
 
