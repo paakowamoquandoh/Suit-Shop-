@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 80px;
-    background: rgba(147, 147, 147, 0.932);
+    background: rgb(227,239,251);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
     position: sticky;
@@ -22,47 +22,7 @@
     height: 80px;
 }
 
-.secondHeader{
-    background: rgba(211, 211, 211, 0.932);
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: static;
-}
 
-.searchBox{
-    width: 500px;
-    display: flex;
-}
-
-.searchInput{
-    width: 80%;
-    height: 40px;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #d1d1d1;
-    text-transform: capitalize;
-    background: white;
-    color: #a9a9a9;
-
-}
-
-.searchBtn{
-    width: 20%;
-    height: 40px;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: #383838;
-    color: #fff;
-    text-transform: capitalize;
-    font-size: 15px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
 
 .navItems{
     display: flex;
@@ -96,14 +56,14 @@
 }
 
 .navItems li a:hover, .navItems li a.active{
-    color: rgb(172, 98, 0);
+    color: rgb(97,167,52);
 }
 
 .navItems li a.active::after{
     content: "";
     width: 30%;
     height: 4px;
-    background: rgb(172, 98, 0);
+    background: rgb(97,167,52);
     position: absolute;
     bottom: -4px;
     left: 20px;

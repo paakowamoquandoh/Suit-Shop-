@@ -14,7 +14,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #dbdbdb;
+    background: rgb(227,239,251);
 }
 
 .loader{
@@ -61,7 +61,7 @@ input[type="number"],
     height: 40px;
     text-align: center;
     line-height: 40px;
-    background: #383838;
+    background: rgb(97,167,52);
     color: #fff;
     border-radius: 2px;
     text-transform: capitalize;

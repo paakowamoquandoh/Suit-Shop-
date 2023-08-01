@@ -12,40 +12,12 @@ admin.initializeApp({
 
 let dB = admin.firestore();
 
-//aws config
-const AWS = require("aws-sdk");
+
 const dotnev = require("dotenv");
 
 dotnev.config();
 
-//aws paramenters
-const region = "ap-southeast-1";
-const bucketName = "suit-shop1st";
-const accessKeyId = process.env.AWS_ACCESS_KEY;
-const secretAccessKey = process.env.AWS_SECRET_KEY;
 
-AWS.config.update({
-  region,accessKeyId,secretAccessKey
-})
-
-const S3 = new AWS.S3()
-
-async function generateUrl() {
-  let date = new Date();
-  let id = parseInt(Math.random() * 10000000000);
-
-  const imageName =  `${id}${date.getTime()}.jpg`;
-
-  const params = ({
-    Bucket: bucketName,
-    Key: imageName,
-    Expires: 300,
-    ContentType: "image/jpeg"
-  })
-
-  const uploadUrl = await S3.getSignedUrlPromise("putObject", params);
-  return uploadUrl;
-}
 
 
 

@@ -77,8 +77,9 @@ button.white{
 
 
 /* Cover section Styling */
+
 .cover{
-    background-image: url("../img/page-backgrounds/clem-onojeghuo-CJtNSIOicD0-unsplash.jpg") ;
+    background-image: url("../img/page-backgrounds/back.jpg") ;
     background-color: rgb(1, 7, 5);
     height: 66vh;
     width: 100%;
