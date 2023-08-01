@@ -67,7 +67,7 @@ submitForm.addEventListener("click", () => {
                     // Assuming response contains information about successful login,
                     // you can redirect to "index.html" here
                     if (response.name && response.email) {
-                      window.location.href = "/index.html";
+                      window.location.href = "/index";
                     }
                   });
         }
