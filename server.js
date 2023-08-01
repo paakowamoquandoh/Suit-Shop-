@@ -151,11 +151,6 @@ app.get("/addProduct", (req,res) => {
   res.sendFile(path.join(staticPath, "addProduct.html"));
 })
 
-//get upload link
-app.get("/S3url", (req,res) => {
-  generateUrl().then(url => res.json(url));
-})
-
 //404
 app.get("/404", (req, res) => {
   res.sendFile(path.join(staticPath, "404.html"));

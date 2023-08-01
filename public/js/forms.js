@@ -83,7 +83,7 @@ submitForm.addEventListener("click", () => {
         //create auth
         // data.authToken = generateToken(data.email);
         sessionStorage.user = JSON.stringify(data);
-        location.replace("/")
+        location.replace("/admin")
     }
   }
 

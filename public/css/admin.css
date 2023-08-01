@@ -42,13 +42,20 @@ body{
 .btn{
     border: none;
     outline: none;
-    background: #383838;
+    background: rgb(97,167,52);
     color: #fff;
     padding: 10px 30px;
     border-radius: 5px;
     text-transform: capitalize;
     font-size: 14px;
     cursor: pointer;
+}
+
+.backtohome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
 }
 
 .hide{
