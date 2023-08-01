@@ -47,17 +47,17 @@ const showAlert = (msg) => {
 };
 
 //send data
-// const sendData = (path, data) => {
-//   fetch(path, {
-//     method: "post",
-//     headers: new Headers({ "Content-Type": "application/json" }),
-//     body: JSON.stringify(data),
-//   })
-//     .then((res) => res.json())
-//     .then((response) => {
-//       processData(response);
-//     });
-// };
+const sendData = (path, data) => {
+  fetch(path, {
+    method: "post",
+    headers: new Headers({ "Content-Type": "application/json" }),
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      processData(response);
+    });
+};
 
 const processData = (data) => {
   console.log(data);
@@ -90,12 +90,15 @@ applyFormButton.addEventListener("click", () => {
     showAlert("you must agree to our terms and conditions");
   } else {
     //making server request
-    let alertArea = document.querySelector(".alertArea");
-  let alertMessage = document.querySelector(".errorText");
-  alertMessage.innerHTML = "Application Successful";
-  alertArea.classList.add("show");
-  setTimeout(() => {
-    alertArea.classList.remove("show");
-  }, 3000);
+    loader.style.display = "block";
+    sendData("/admin", {
+      name: businessName.value,
+      address: address.value,
+      about: about.value,
+      number: number.value,
+      tAndC: tAndC.checked,
+      validInfo: validInfo.checked,
+      email: JSON.parse(sessionStorage.user).email,
+    });
   }
 });
