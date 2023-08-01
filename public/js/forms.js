@@ -36,15 +36,15 @@ submitForm.addEventListener("click", () => {
           }else{
               //submit form
               pageloader.style.display = "block";
-              sendData("/signup", {
-                  name: nameValue.value,
-                  email: emailValue.value,
-                  password: passwordValue.value,
-                  number: numberValue.value,
-                  termsAndConditions: termsAndConditions.checked,
-                  notification: notification.checked,
-                  seller: false
-              })
+            //   sendData("/signup", {
+            //       name: nameValue.value,
+            //       email: emailValue.value,
+            //       password: passwordValue.value,
+            //       number: numberValue.value,
+            //       termsAndConditions: termsAndConditions.checked,
+            //       notification: notification.checked,
+            //       seller: false
+            //   })
           }        
     } else{
         //login
