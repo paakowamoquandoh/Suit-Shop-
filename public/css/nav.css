@@ -59,6 +59,10 @@
     color: rgb(97,167,52);
 }
 
+.showIcon{
+    display: flex;
+}
+
 .navItems li a.active::after{
     content: "";
     width: 30%;
