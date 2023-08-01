@@ -36,15 +36,21 @@ submitForm.addEventListener("click", () => {
           }else{
               //submit form
               pageloader.style.display = "block";
-            //   sendData("/signup", {
-            //       name: nameValue.value,
-            //       email: emailValue.value,
-            //       password: passwordValue.value,
-            //       number: numberValue.value,
-            //       termsAndConditions: termsAndConditions.checked,
-            //       notification: notification.checked,
-            //       seller: false
-            //   })
+              sendData("/signup", {
+                name: nameValue.value,
+                email: emailValue.value,
+                password: passwordValue.value,
+                number: numberValue.value,
+                termsAndConditions: termsAndConditions.checked,
+                notification: notification.checked,
+                seller: false
+              }).then(response => {
+                // Assuming response contains information about the successful signup,
+                // you can redirect to "index.html" here
+                if (response.name && response.email) {
+                  window.location.href = "/index.html";
+                }
+              });
           }        
     } else{
         //login
@@ -57,7 +63,13 @@ submitForm.addEventListener("click", () => {
                   email: emailValue.value,
                   password: passwordValue.value,
                   
-                })
+                }).then(response => {
+                    // Assuming response contains information about successful login,
+                    // you can redirect to "index.html" here
+                    if (response.name && response.email) {
+                      window.location.href = "/index.html";
+                    }
+                  });
         }
     }
   });
@@ -93,3 +105,8 @@ const showAlert = (msg) => {
         alertArea.classList.remove("show");
     }, 3000);
 }
+
+
+
+
+
