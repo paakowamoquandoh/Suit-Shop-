@@ -63,14 +63,20 @@ submitForm.addEventListener("click", () => {
   });
 
 
-  //send data
-  const sendData = (path, data) => {
+ //send data
+const sendData = (path, data) => {
     fetch(path, {
       method: "post",
       headers: new Headers({ "Content-Type": "application/json" }),
       body: JSON.stringify(data)
     })
-      .then((res) => res.json())
+      .then((res) => {
+        // Check if the response has valid JSON data
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
       .then(response => {
         // Check if the response contains a property indicating successful login or admin access
         if (response && response.admin) {
@@ -86,6 +92,7 @@ submitForm.addEventListener("click", () => {
         console.error("Error during fetch:", error);
       });
   };
+  
   
 
   const processData = (data) => {
