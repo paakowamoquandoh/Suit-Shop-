@@ -35,7 +35,7 @@ submitForm.addEventListener("click", () => {
               showAlert("you must agree to our terms and conditions");
           }else{
               //submit form
-              window.location.href = "/admin";
+              window.location.href = "/admin.html";
           }        
     } else{
         //login
@@ -43,30 +43,10 @@ submitForm.addEventListener("click", () => {
             showAlert("fill all the inputs");          
         }else {
             pageloader.style.display = "block";
-            window.location.href = "/admin";
+            window.location.href = "/admin.html";
         }
     }
   });
-
-
- //send data
-const sendData = () => {
-    
-  };
-  
-  
-
-  const processData = (data) => {
-    pageloader.style.display = null;
-    if (data.alert) {
-        showAlert(data.alert)
-    }else if(data.name){
-        //create auth
-        // data.authToken = generateToken(data.email);
-        sessionStorage.user = JSON.stringify(data);
-        location.replace("/admin")
-    }
-  }
 
 
 //alerf function

@@ -17,9 +17,7 @@ window.onload = () => {
         applicationForm.style.display = "none"
       }
     }
-  } else {
-    location.replace("/login");
-  }
+  } 
 };
 
 showApplication.addEventListener("click", () => {
@@ -46,37 +44,9 @@ const showAlert = (msg) => {
   }, 3000);
 };
 
-//send data
-const sendData = (path, data) => {
-  fetch(path, {
-    method: "post",
-    headers: new Headers({ "Content-Type": "application/json" }),
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      processData(response);
-    });
-};
 
-const processData = (data) => {
-  console.log(data);
-  loader.style.display = null;
-  if (data.alert) {
-    showAlert(data.alert);
-  } else if (data.name) {
-    //create auth
-    // data.authToken = generateToken(data.email);
-    sessionStorage.user = JSON.stringify(data);
-    location.replace("/");
-  } else if (data == true) {
-    //admin page
-    let user = JSON.parse(sessionStorage.user);
-    user.admin = true;
-    sessionStorage.user = JSON.stringify(user);
-    location.reload();
-  }
-};
+
+
 
 applyFormButton.addEventListener("click", () => {
   if (
@@ -91,14 +61,6 @@ applyFormButton.addEventListener("click", () => {
   } else {
     //making server request
     loader.style.display = "block";
-    sendData("/admin", {
-      name: businessName.value,
-      address: address.value,
-      about: about.value,
-      number: number.value,
-      tAndC: tAndC.checked,
-      validInfo: validInfo.checked,
-      email: JSON.parse(sessionStorage.user).email,
-    });
+    window.location.href = "/search.html";
   }
 });

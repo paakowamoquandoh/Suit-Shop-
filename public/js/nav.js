@@ -52,10 +52,10 @@ window.onload = () => {
         })    
     }else{
         //user logged out
-        popUpText.innerHTML = "Log in to place order";
+        popUpText.innerHTML = "Log in as Agent";
         loginActionBtn.innerHTML = "Log in";
         loginActionBtn.addEventListener("click", () => {
-            location.href = "/login";
+            location.href = "/login.html";
         })
         
     }
