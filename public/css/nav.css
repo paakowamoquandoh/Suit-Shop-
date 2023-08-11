@@ -52,7 +52,8 @@
 }
 
 .personIcon{
-    display: none;cursor: pointer;
+    display: none;
+    cursor: pointer;
 }
 
 .navItems li a:hover, .navItems li a.active{
