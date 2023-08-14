@@ -29,7 +29,7 @@ if (navMenuClose) {
 
 
 const userPlace = document.querySelector("#loginArea");
-// const userPlaceMobile = document.querySelector("#userMobile");
+
 const showOptions = document.querySelector(".loginPopUp");
 const popUpText = document.querySelector(".accountInfo");
 const loginActionBtn = document.querySelector("#userBtn");
